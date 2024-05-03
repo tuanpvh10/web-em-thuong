@@ -5,12 +5,152 @@
       "PackagePath": "staticwebassets\\WebEmThuong.bundle.scp.css"
     },
     {
-      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\css\\layout.css",
+      "PackagePath": "staticwebassets\\css\\layout.css"
     },
     {
       "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5752-removebg-preview.png",
+      "PackagePath": "staticwebassets\\img\\IMG_5752-removebg-preview.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5752.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5752.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5753-removebg-preview.png",
+      "PackagePath": "staticwebassets\\img\\IMG_5753-removebg-preview.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5753.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5753.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5753_Slide_Three.png",
+      "PackagePath": "staticwebassets\\img\\IMG_5753_Slide_Three.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5753_index.jpg",
+      "PackagePath": "staticwebassets\\img\\IMG_5753_index.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5754.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5754.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5755-removebg-preview.png",
+      "PackagePath": "staticwebassets\\img\\IMG_5755-removebg-preview.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5755.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5755.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5756.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5756.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5756_index.jpg",
+      "PackagePath": "staticwebassets\\img\\IMG_5756_index.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5757.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5757.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5758.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5758.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_5779.JPG",
+      "PackagePath": "staticwebassets\\img\\IMG_5779.JPG"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_Slide_One.png",
+      "PackagePath": "staticwebassets\\img\\IMG_Slide_One.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\IMG_Slide_Two.png",
+      "PackagePath": "staticwebassets\\img\\IMG_Slide_Two.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\backgound.jpg",
+      "PackagePath": "staticwebassets\\img\\backgound.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\beef_on_fire.jpg",
+      "PackagePath": "staticwebassets\\img\\beef_on_fire.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\logo-removebg-preview.png",
+      "PackagePath": "staticwebassets\\img\\logo-removebg-preview.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\logo.jpg",
+      "PackagePath": "staticwebassets\\img\\logo.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\logo_txt.png",
+      "PackagePath": "staticwebassets\\img\\logo_txt.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\logo_txt_remove_bg.png",
+      "PackagePath": "staticwebassets\\img\\logo_txt_remove_bg.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product01.jpg",
+      "PackagePath": "staticwebassets\\img\\product01.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product02.jpg",
+      "PackagePath": "staticwebassets\\img\\product02.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product03.jpg",
+      "PackagePath": "staticwebassets\\img\\product03.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product04.jpg",
+      "PackagePath": "staticwebassets\\img\\product04.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product05.jpg",
+      "PackagePath": "staticwebassets\\img\\product05.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product06.jpg",
+      "PackagePath": "staticwebassets\\img\\product06.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product07.jpg",
+      "PackagePath": "staticwebassets\\img\\product07.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product_index_01.jpg",
+      "PackagePath": "staticwebassets\\img\\product_index_01.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\product_index_01_screct.jpg",
+      "PackagePath": "staticwebassets\\img\\product_index_01_screct.jpg"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\test.png",
+      "PackagePath": "staticwebassets\\img\\test.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\test2.png",
+      "PackagePath": "staticwebassets\\img\\test2.png"
+    },
+    {
+      "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\img\\test3.png",
+      "PackagePath": "staticwebassets\\img\\test3.png"
     },
     {
       "Id": "E:\\Web_Em_Thuong\\web\\WebEmThuong\\WebEmThuong\\wwwroot\\js\\site.js",

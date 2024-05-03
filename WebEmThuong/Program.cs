@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using WebEmThuong.Models;
+using WebEmThuong.SignalR;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSignalR();
+
+builder.Services.AddDbContext<MyDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDb"));
+});
 
 var app = builder.Build();
 
@@ -19,6 +30,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapHub<MyHub>("/myHub");
 
 app.MapControllerRoute(
     name: "default",
