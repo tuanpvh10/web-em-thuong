@@ -1,5 +1,6 @@
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\bin\Release\net8.0\appsettings.Development.json
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\bin\Release\net8.0\appsettings.json
+E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\bin\Release\net8.0\libman.json
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\bin\Release\net8.0\WebEmThuong.staticwebassets.runtime.json
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\bin\Release\net8.0\WebEmThuong.exe
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\bin\Release\net8.0\WebEmThuong.deps.json
@@ -135,4 +136,3 @@ E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\obj\Release\net8.0\refint\WebEmThuo
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\obj\Release\net8.0\WebEmThuong.pdb
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\obj\Release\net8.0\WebEmThuong.genruntimeconfig.cache
 E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\obj\Release\net8.0\ref\WebEmThuong.dll
-E:\Web_Em_Thuong\web\WebEmThuong\WebEmThuong\bin\Release\net8.0\libman.json
