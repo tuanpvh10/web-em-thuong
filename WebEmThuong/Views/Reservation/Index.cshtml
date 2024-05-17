@@ -30,10 +30,10 @@
                         <div class="flex-horizontal _14px-gap">
                             <input asp-for="Name" class="reservation-input w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name *" type="text" id="name" required="" />
                             <input asp-for="Email" class="reservation-input w-input" maxlength="256" name="email" data-name="Email" placeholder="Email Address *" type="email" id="email" required="" />
-                            <input asp-for="PhoneNumber" class="reservation-input w-input" maxlength="256" name="contact" data-name="Contact" placeholder="Contact No *" type="text" id="contact" required="" />
+                            <input asp-for="PhoneNumber" class="reservation-input w-input" maxlength="256" data-name="PhoneNumber" placeholder="Contact No *" type="tel" id="contact" required="" />
                         </div>
                         <div class="flex-horizontal _14px-gap">
-                            <input asp-for="NumberPeople" class="reservation-input w-input" maxlength="256" name="people" data-name="People" placeholder="People *" type="people" id="people" required="" />
+                            <input asp-for="NumberPeople" class="reservation-input w-input" maxlength="256" data-name="NumberPeople" placeholder="People *" type="number" id="people" required="" />
                             <input asp-for="Date" type="date" id="reservation-date" class="reservation-input w-input" required="">
                             <input asp-for="Time" type="time" id="reservation-time" class="reservation-input w-input" required="">
                         </div>

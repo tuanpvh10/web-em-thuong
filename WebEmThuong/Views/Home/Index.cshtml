@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WebEmThuong.Models.Reservation;
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -303,25 +304,22 @@
                         </div>
                     </div>
                     <div class="reservation-form w-form">
-                        <form id="email-form" name="email-form" data-name="Email Form" method="get" class="vertical-wrapper _40px-gap" data-wf-page-id="659ce7907b329267fdb90f82" data-wf-element-id="dc730bbd-80e4-efaa-a4af-5b716f823bb8">
+                        <form asp-controller="Reservation" asp-action="Create" id="email-form" name="email-form" data-name="Email Form" method="post" class="vertical-wrapper _40px-gap" data-wf-page-id="659e8d644eb26f00cd41e271" data-wf-element-id="fc929a18-5afb-fc63-92e3-89db322fa827">
                             <div class="flex-horizontal _14px-gap">
-                                <input class="reservation-input w-input" maxlength="256" name="name" data-name="name" placeholder="Full Name *" type="text" id="name" required="" /><input class="reservation-input w-input" maxlength="256" name="email" data-name="email"
-                                                                                                                                                                                           placeholder="Email Address *" type="email" id="email" required="" /><input class="reservation-input w-input" maxlength="256" name="contact" data-name="contact" placeholder="Contact No *" type="tel" id="contact" required="" />
+                                <input asp-for="Name" class="reservation-input w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name *" type="text" id="name" required="" />
+                                <input asp-for="Email" class="reservation-input w-input" maxlength="256" name="email" data-name="Email" placeholder="Email Address *" type="email" id="email" required="" />
+                                <input asp-for="PhoneNumber" class="reservation-input w-input" maxlength="256" data-name="PhoneNumber" placeholder="Contact No *" type="tel" id="contact" required="" />
                             </div>
                             <div class="flex-horizontal _14px-gap">
-                                <select id="people-2" name="people-2" data-name="People 2" class="reservation-input w-select"><option value="">2 People</option><option value="First">3 People</option><option value="Second">4 People</option><option value="Third">5 People</option></select>
-                                <select id="date-2" name="date-2" data-name="Date 2" class="reservation-input w-select">
-                                    <option value="">29 Jan 2023</option>
-                                    <option value="First">29 Jan 2023</option>
-                                    <option value="Second">30 Jan 2023</option>
-                                    <option value="Third">31 Jan 2023</option>
-                                </select><select id="time-2" name="time-2" data-name="Time 2" class="reservation-input w-select"><option value="">10:00 AM</option><option value="First">10:00 AM</option><option value="Second">11:00 AM</option><option value="Third">12:00 AM</option></select>
+                                <input asp-for="NumberPeople" class="reservation-input w-input" maxlength="256" data-name="NumberPeople" placeholder="People *" type="number" id="people" required="" />
+                                <input asp-for="Date" type="date" id="reservation-date" class="reservation-input w-input" required="">
+                                <input asp-for="Time" type="time" id="reservation-time" class="reservation-input w-input" required="">
                             </div>
                             <div class="margin-top-20px">
                                 <input type="submit" data-wait="Please wait..." class="rounded-button full-width w-button" value="Book a table" />
                             </div>
                         </form>
-                        <div class="success-message w-form-done">
+                        <div class="w-form-done">
                             <div>Thank you! Your submission has been received!</div>
                         </div>
                         <div class="w-form-fail">

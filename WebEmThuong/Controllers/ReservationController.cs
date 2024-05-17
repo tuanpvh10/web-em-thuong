@@ -25,12 +25,12 @@ namespace WebEmThuong.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Reservation reservation)
         {
-            if(!ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 myDbContext.Reservations.Add(reservation);
                 myDbContext.SaveChanges();
-                await myhub.Clients.All.SendAsync("ReceiveReservationNotification");
-                return RedirectToAction("Index", "Home");
+                await myhub.Clients.All.SendAsync("ReceiveReservationNotification", reservation.Id);
+                return RedirectToAction("Index", "Reservation");
             }
             return View(reservation);
         }
