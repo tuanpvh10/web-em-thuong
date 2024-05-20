@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using WebEmThuong.Models;
 using WebEmThuong.SignalR;
 
@@ -12,6 +14,18 @@ builder.Services.AddSignalR();
 builder.Services.AddDbContext<MyDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDb"));
+});
+
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.User.RequireUniqueEmail = false;
+}).AddEntityFrameworkStores<MyDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
 var app = builder.Build();
@@ -29,6 +43,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapHub<MyHub>("/myHub");
@@ -38,3 +54,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using WebEmThuong.Models;
 using WebEmThuong.SignalR;
 
 namespace WebEmThuong.Controllers
 {
+    [Authorize]
     public class ReservationController : Controller
     {
         private readonly MyDbContext myDbContext;
@@ -29,10 +31,11 @@ namespace WebEmThuong.Controllers
             {
                 myDbContext.Reservations.Add(reservation);
                 myDbContext.SaveChanges();
-                await myhub.Clients.All.SendAsync("ReceiveReservationNotification", reservation.Id);
+                await myhub.Clients.All.SendAsync("ReceiveReservationNotification", reservation.PhoneNumber);
+                TempData["ReservationSuccess"] = "You have successfully booked your table, we will contact you soon. Thank you so much!";
                 return RedirectToAction("Index", "Reservation");
             }
-            return View(reservation);
+            return RedirectToAction("Index", "Reservation");
         }
     }
 }

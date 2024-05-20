@@ -1,0 +1,112 @@
+﻿@model WebEmThuong.Models.Reservation
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        h1, h4 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .edit-container {
+            margin-top: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .btn-back, .btn-save {
+            margin-top: 20px;
+        }
+
+        .waiting {
+            background-color: red;
+            color: white;
+        }
+
+        .confirmed {
+            background-color: yellow;
+            color: black;
+        }
+
+        .done {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container edit-container">
+        <h1>Edit Reservation</h1>
+        <h4>Reservation</h4>
+        <hr />
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Date" class="control-label"></label>
+                        <input asp-for="Date" class="form-control" />
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Time" class="control-label"></label>
+                        <input asp-for="Time" class="form-control" />
+                        <span asp-validation-for="Time" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NumberPeople" class="control-label"></label>
+                        <input asp-for="NumberPeople" class="form-control" />
+                        <span asp-validation-for="NumberPeople" class="text-danger"></span>
+                    </div>
+                    <select asp-for="Status" class="form-control">
+                        <option value="waiting" class="waiting">Waiting</option>
+                        <option value="confirmed" class="confirmed">Confirmed</option>
+                        <option value="done" class="done">Done</option>
+                    </select>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary btn-save" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-secondary btn-back" asp-action="Index">Back to List</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
