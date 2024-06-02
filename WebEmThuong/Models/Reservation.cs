@@ -13,7 +13,7 @@ namespace WebEmThuong.Models
         [Required]
         public TimeOnly Time { get; set; }
         [Required]
-        public int PhoneNumber { get; set; }
+        public double PhoneNumber { get; set; }
         public int NumberPeople { get; set; }
         public string Status { get; set; } = "Waiting";
     }

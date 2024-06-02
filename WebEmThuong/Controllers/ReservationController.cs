@@ -6,7 +6,6 @@ using WebEmThuong.SignalR;
 
 namespace WebEmThuong.Controllers
 {
-    [Authorize]
     public class ReservationController : Controller
     {
         private readonly MyDbContext myDbContext;
