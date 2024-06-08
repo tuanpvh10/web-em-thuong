@@ -25,7 +25,7 @@
                     {
                         <div class="w-dyn-list">
                             <div role="list" class="vertical-wrapper _20px-gap w-dyn-items">
-                                <div role="listitem" class="w-dyn-item"><a href="#" class="widget-link">@Html.DisplayFor(modeItem => item.Name)</a></div>
+                                <div role="listitem" class="w-dyn-item"><a asp-action="index" asp-route-id="@item.Id" class="widget-link">@Html.DisplayFor(modeItem => item.Name)</a></div>
                             </div>
                         </div>
                     }

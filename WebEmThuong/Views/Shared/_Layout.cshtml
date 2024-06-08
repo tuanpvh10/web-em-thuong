@@ -52,7 +52,7 @@
                             </div>
                         </li>
                         <li class="nav-list"><a href="/about" class="nav-link text-color">About Us</a></li>
-                        <li class="nav-list"><a href="/shop" aria-current="page" class="nav-link text-color w--current">Menu</a></li>
+                        <li class="nav-list"><a asp-controller="ShopController" asp-action="index" asp-route-id="0" aria-current="page" class="nav-link text-color w--current">Menu</a></li>
                         <li class="nav-list"><a href="/reservation" class="nav-link text-color">Reservation</a></li>
                         <li class="nav-list"><a href="/contact" class="nav-link text-color">Contact Us</a></li>
                     </ul>
@@ -136,7 +136,7 @@
                         <div class="footer-title">Quick Link</div>
                         <div class="list-block">
                             <a href="/" aria-current="page" class="footer-link w--current">Home</a>
-                            <a href="/shop" class="footer-link">Menu</a>
+                            <a asp-controller="ShopController" asp-action="index" asp-route-id="0" class="footer-link">Menu</a>
                             <a href="/about" class="footer-link">About</a>
                             <a href="/reservation" class="footer-link">Reservation</a>
                             <a href="/contact" class="footer-link">Contact</a>
