@@ -34,10 +34,12 @@
                 <dd class="col-sm-10">@Html.DisplayFor(model => model.Rating)</dd>
 
                 <dt class="col-sm-2">@Html.DisplayNameFor(model => model.ImgUrl)</dt>
-                <dd class="col-sm-10">@Html.DisplayFor(model => model.ImgUrl)</dd>
+                <dd class="col-sm-10">
+                    <img src="~/img/@System.IO.Path.GetFileName(Model.ImgUrl)" alt="Current Image" class="img-thumbnail" style="max-height: 300px;" />
+                </dd>
 
-                <dt class="col-sm-2">@Html.DisplayNameFor(model => model.CatagoryId)</dt>
-                <dd class="col-sm-10">@Html.DisplayFor(model => model.CatagoryId)</dd>
+                <dt class="col-sm-2">Category Name</dt>
+                <dd class="col-sm-10">@ViewBag.CategoryName</dd>
             </dl>
         </div>
 

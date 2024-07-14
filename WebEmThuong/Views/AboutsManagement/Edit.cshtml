@@ -1,0 +1,77 @@
+﻿@model WebEmThuong.Models.About
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Edit</h1>
+        <h4>About Management</h4>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="ImgUrl1" />
+                    <input type="hidden" asp-for="ImgUrl2" />
+                    <input type="hidden" asp-for="ImgUrl3" />
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Desciption" class="control-label"></label>
+                        <input asp-for="Desciption" class="form-control" />
+                        <span asp-validation-for="Desciption" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImgUrl1" class="control-label">Image URL 1</label>
+                        <input asp-for="ImgUrl1" type="file" name="file1" class="form-control" />
+                        <span asp-validation-for="ImgUrl1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImgUrl2" class="control-label">Image URL 2</label>
+                        <input asp-for="ImgUrl2" type="file" name="file2" class="form-control" />
+                        <span asp-validation-for="ImgUrl2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImgUrl3" class="control-label">Image URL 3</label>
+                        <input asp-for="ImgUrl3" type="file" name="file3" class="form-control" />
+                        <span asp-validation-for="ImgUrl3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary ml-2">Back to List</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="text-right mb-3">
+                    <img src="~/img/@System.IO.Path.GetFileName(Model.ImgUrl1)" alt="Current Image 1" class="img-thumbnail" style="max-height: 100px;" />
+                </div>
+                <div class="text-right mb-3">
+                    <img src="~/img/@System.IO.Path.GetFileName(Model.ImgUrl2)" alt="Current Image 2" class="img-thumbnail" style="max-height: 100px;" />
+                </div>
+                <div class="text-right">
+                    <img src="~/img/@System.IO.Path.GetFileName(Model.ImgUrl3)" alt="Current Image 3" class="img-thumbnail" style="max-height: 100px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

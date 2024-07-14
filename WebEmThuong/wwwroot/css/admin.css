@@ -1,0 +1,44 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+    header nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        header nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+        }
+
+            header nav ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+            }
+
+.admin-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+}

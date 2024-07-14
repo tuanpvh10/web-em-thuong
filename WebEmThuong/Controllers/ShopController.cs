@@ -4,6 +4,7 @@ using WebEmThuong.Models;
 
 namespace WebEmThuong.Controllers
 {
+    [Route("/shop")]
     public class ShopController : Controller
     {
         private readonly MyDbContext _context;
@@ -12,6 +13,7 @@ namespace WebEmThuong.Controllers
         {
             _context = context;
         }
+        [Route("{categoryId?}")]
         public async Task<IActionResult> Index(int categoryId)
         {
             var catagories = await _context.Category.OrderBy(c=>c.Sort).ToListAsync();
@@ -21,14 +23,19 @@ namespace WebEmThuong.Controllers
             {
                 productions = await _context.Productions.Where(p => p.CatagoryId == categoryId).OrderBy(p => p.Sort).ToListAsync();
             }
-
-            productions = await _context.Productions.OrderBy(p => p.Sort).ToListAsync();
+            else
+            {
+                productions = await _context.Productions.OrderBy(p => p.Sort).ToListAsync();
+            }
 
             var shopViewModel = new ShopViewModel
             {
                 Categories = catagories,
                 Productions = productions
             };
+
+            var ig = _context.Instagram.OrderBy(b => b.Id).ToList();
+            ViewBag.ig = ig;
 
             return View(shopViewModel);
         }

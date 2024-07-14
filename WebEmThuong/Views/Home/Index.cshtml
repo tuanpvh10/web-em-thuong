@@ -1,6 +1,15 @@
-﻿@model WebEmThuong.Models.Reservation;
+﻿@model WebEmThuong.Models.HomeViewModel;
+ 
 @{
     Layout = null;
+}
+@{
+    var bg = Model.BackGrounds;
+    var ab = Model.AboutHomePageManagements;
+    var sp = Model.SpecialOffers;
+    var re = Model.ReservationHomePages;
+    var cmt = Model.Comments;
+    var ig = Model.Instagrams;
 }
 <!DOCTYPE html>
 <html data-wf-domain="#" data-wf-page="659ce7907b329267fdb90f82" data-wf-site="659662e6ea1f446bb2be088b" lang="en">
@@ -53,7 +62,7 @@
                             </div>
                         </li>
                         <li class="nav-list"><a href="/about" class="nav-link white-link">About Us</a></li>
-                        <li class="nav-list"><a href="/shop" class="nav-link white-link">Menu</a></li>
+                        <li class="nav-list"><a href="/shop/0" class="nav-link white-link">Menu</a></li>
                         <li class="nav-list"><a href="/reservation" class="nav-link white-link">Reservation</a></li>
                         <li class="nav-list"><a href="/contact" class="nav-link white-link">Contact Us</a></li>
                     </ul>
@@ -82,17 +91,17 @@
                         <div class="hero-wrapper">
                             <h1 data-w-id="4db0707a-26fe-7d94-c8e7-42e6a882aab7" style="opacity:0;-webkit-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                                 class="hero-title primary-color _100px">
-                                Welcome to Restaurant Bâu's
+                                @bg[0].Name
                             </h1>
                             <p data-w-id="4db0707a-26fe-7d94-c8e7-42e6a882aab9" style="opacity:0;-webkit-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                               class="hero-paragraphh">Restaurant Bâu's</p>
+                               class="hero-paragraphh">@bg[0].Slogan</p>
                             <div data-w-id="9781d3fc-8e86-b32a-2624-2e588b59b5a1" style="opacity:0;-webkit-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
                                  class="hero-buttons-wrapper">
                                 <a href="/reservation" class="primary-button w-inline-block">
                                     <div>Book a table</div>
                                     <div class="button-color"></div>
                                 </a>
-                                <a href="/shop" class="secondary-button w-inline-block">
+                                <a href="/shop/0" class="secondary-button w-inline-block">
                                     <div>See full menu</div>
                                     <div data-w-id="7caa816b-3788-3829-a0c0-b6ebf4140b1a" class="icon _18px-width"></div>
                                     <div class="button-color transparent-bydefault"></div>
@@ -100,22 +109,22 @@
                             </div>
                         </div>
                         <div class="image-wrapper">
-                            <img class="hero-image" src="./img/IMG_Slide_Two.png" width="787" alt="" style="opacity:0;-webkit-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-                                 sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 720px, 51vw" data-w-id="4db0707a-26fe-7d94-c8e7-42e6a882aabc" loading="lazy" srcset="./img/IMG_Slide_Two.png 500w, ./img/IMG_Slide_Two.png 800w, ./img/IMG_Slide_Two.png 1080w, ./img/IMG_Slide_Two.png 1567w" />
+                            <img class="hero-image" src="@bg[0].ImgUrl" width="787" alt="" style="opacity:0;-webkit-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 50px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                 sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 720px, 51vw" data-w-id="4db0707a-26fe-7d94-c8e7-42e6a882aabc" loading="lazy" srcset="@bg[0].ImgUrl 500w, @bg[0].ImgUrl 800w, @bg[0].ImgUrl 1080w, @bg[0].ImgUrl 1567w" />
                         </div>
                     </div>
                 </div>
                 <div class="w-slide">
                     <div class="container horizontal-between">
                         <div class="hero-wrapper">
-                            <h1 class="hero-title primary-color _100px">Welcome to Restaurant Bâu's</h1>
-                            <p class="hero-paragraphh">Restaurant Bâu's</p>
+                            <h1 class="hero-title primary-color _100px">@bg[1].Name</h1>
+                            <p class="hero-paragraphh">@bg[1].Slogan</p>
                             <div class="hero-buttons-wrapper">
                                 <a href="/reservation" class="primary-button w-inline-block">
                                     <div>Book a table</div>
                                     <div class="button-color"></div>
                                 </a>
-                                <a href="/shop" class="secondary-button w-inline-block">
+                                <a href="/shop/0" class="secondary-button w-inline-block">
                                     <div>See full menu</div>
                                     <div class="icon _18px-width"></div>
                                     <div class="button-color transparent-bydefault"></div>
@@ -123,8 +132,8 @@
                             </div>
                         </div>
                         <div class="image-wrapper">
-                            <img src="./img/IMG_5753_Slide_Three.png" loading="lazy" width="783.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 720px, 51vw"
-                                 alt="" srcset="./img/IMG_5753_Slide_Three.png 500w, ./img/IMG_5753_Slide_Three.png 800w, ./img/IMG_5753_Slide_Three.png 1080w, ./img/IMG_5753_Slide_Three.png 1600w, ./img/IMG_5753_Slide_Three.png 1698w"
+                            <img src="@bg[1].ImgUrl" loading="lazy" width="783.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 720px, 51vw"
+                                 alt="" srcset="@bg[1].ImgUrl 500w, @bg[1].ImgUrl 800w, @bg[1].ImgUrl 1080w, @bg[1].ImgUrl 1600w, @bg[1].ImgUrl 1698w"
                                  class="hero-image" />
                         </div>
                     </div>
@@ -132,14 +141,14 @@
                 <div class="w-slide">
                     <div class="container horizontal-between">
                         <div class="hero-wrapper">
-                            <h1 class="hero-title primary-color _100px">Welcome to Restaurant Bâu's</h1>
-                            <p class="hero-paragraphh">my slogan</p>
+                            <h1 class="hero-title primary-color _100px">@bg[2].Name</h1>
+                            <p class="hero-paragraphh">@bg[2].Slogan</p>
                             <div class="hero-buttons-wrapper">
                                 <a href="/reservation" class="primary-button w-inline-block">
                                     <div>Book a table</div>
                                     <div class="button-color"></div>
                                 </a>
-                                <a href="/shop" class="secondary-button w-inline-block">
+                                <a href="/shop/0" class="secondary-button w-inline-block">
                                     <div>See full menu</div>
                                     <div class="icon _18px-width"></div>
                                     <div class="button-color transparent-bydefault"></div>
@@ -147,8 +156,8 @@
                             </div>
                         </div>
                         <div class="image-wrapper">
-                            <img src="./img/IMG_Slide_One.png" loading="lazy" width="783.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 720px, 51vw"
-                                 alt="" srcset="./img/IMG_Slide_One.png 500w, ./img/IMG_Slide_One.png 800w, ./img/IMG_Slide_One.png 1080w, ./img/IMG_Slide_One.png 1574w"
+                            <img src="@bg[1].ImgUrl" loading="lazy" width="783.5" sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 720px, 51vw"
+                                 alt="" srcset="@bg[2].ImgUrl 500w, @bg[2].ImgUrl 800w, @bg[2].ImgUrl 1080w, @bg[2].ImgUrl 1574w"
                                  class="hero-image" />
                         </div>
                     </div>
@@ -178,20 +187,19 @@
             <div class="container">
                 <div class="_2-column-block gap-120px">
                     <div class="image-wrapper max-width-80">
-                        <img src="./img/backgound.jpg" loading="lazy" width="70" sizes="(max-width: 479px) 100vw, (max-width: 767px) 76vw, (max-width: 991px) 77vw, 45vw"
-                             alt="" srcset="./img/backgound.jpg 500w, ./img/backgound.jpg 800w, ./img/backgound.jpg 1080w, ./img/backgound.jpg 1424w" />
+                        <img src="@ab[0].ImgUrl" loading="lazy" width="70" sizes="(max-width: 479px) 100vw, (max-width: 767px) 76vw, (max-width: 991px) 77vw, 45vw"
+                             alt="" srcset="@ab[0].ImgUrl 500w, @ab[0].ImgUrl 800w, @ab[0].ImgUrl 1080w, @ab[0].ImgUrl 1424w" />
                         <div class="image-background-overlay"></div>
                     </div>
                     <div class="contents-wrapper">
                         <div class="vertical-wrapper _10px-gap">
                             <div class="title">Welcome to Bâu's Restaurant</div>
                             <div class="mask">
-                                <h2 class="heading">Where Every Meal is an Unforgettable Experience</h2>
+                                <h2 class="heading">@ab[0].Title</h2>
                             </div>
                         </div>
                         <p>
-                            Step into a realm where culinary artistry meets unparalleled ambiance, and every meal transcends mere sustenance to become an unforgettable experience. This is not just a dining establishment; it is a sanctuary for the senses,
-                            where flavors dance on the palate and the ambiance is carefully curated to elevate the dining journey.
+                            @ab[0].Desciption
                         </p>
                         <div class="margin-top-20px">
                             <a href="/contact" class="primary-button w-inline-block">
@@ -209,7 +217,7 @@
                 <div class="mask">
                     <div class="mask">
                         <h2 class="heading _92-width">Restaurant Bâu's Special Offers</h2>
-                    </div><a href="/shop" class="arrow-icon-absolute"></a>
+                    </div><a href="/shop/0" class="arrow-icon-absolute"></a>
                 </div>
                 <div class="divider-gap">
                     <div class="border"></div>
@@ -219,72 +227,56 @@
                         <div role="listitem" class="w-dyn-item">
                             <a href="#" class="food-card-secondary w-inline-block">
                                 <div class="mask">
-                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="./img/product_index_01.jpg"
-                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="/img/product_index_01_screct.jpg 500w, ./img/product_index_01.jpg 674w"
+                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="@sp[0].ImgUrl"
+                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="@sp[0].ImgUrl 500w, @sp[0].ImgUrl 674w"
                                          class="food-image-thumbnail no-radius" />
                                 </div>
                                 <div class="food-card-body left-allign">
-                                    <h3 class="sub-title">Lachs Sashimi</h3>
+                                    <h3 class="sub-title">@sp[0].Title</h3>
                                         <p>
-                                            "Lachs Sashimi" ist ein traditionelles japanisches Gericht, bestehend aus dünnen Scheiben frischen Lachs, das roh serviert wird.
-                                        </p>
-                                    <div class="food-price-block">
-                                        @* <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price compare-price">$ 24.00 USD</div> *@
-                                        <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price">15,50 €</div>
-                                    </div>
+                                        @sp[0].Description
+                                    </p>
                                 </div>
                             </a>
                         </div>
                         <div role="listitem" class="w-dyn-item">
                             <a href="#" class="food-card-secondary w-inline-block">
                                 <div class="mask">
-                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="./img/IMG_5756_index.JPG"
-                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="./img/IMG_5756_index.JPG 500w, ./img/IMG_5756_index.JPG 674w"
+                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="@sp[1].ImgUrl"
+                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="@sp[1].ImgUrl 500w, @sp[1].ImgUrl 674w"
                                          class="food-image-thumbnail no-radius" />
                                 </div>
                                 <div class="food-card-body left-allign">
                                     <h3 class="sub-title">Salmon Delight</h3>
-                                    <p>Zart gegrilltes Lachsfilet mit scharf angebratenem Gemüse, Sellerie und hausgemachter Sauce, serviert mit weißem Jasminreis und frischem Kimchi-Salat.</p>
-                                    <div class="food-price-block">
-                                        @* <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price compare-price">$ 25.00 USD</div> *@
-                                        <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price">13,50 €</div>
-                                    </div>
+                                    <p>@sp[1].Description</p>
                                 </div>
                             </a>
                         </div>
                         <div role="listitem" class="w-dyn-item">
                             <a href="#" class="food-card-secondary w-inline-block">
                                 <div class="mask">
-                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="./img/IMG_5753_index.JPG"
-                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="./img/IMG_5753_index.JPG 500w, ./img/IMG_5753_index.JPG 674w"
+                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="@sp[2].ImgUrl"
+                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="@sp[2].ImgUrl 500w, @sp[2].ImgUrl 674w"
                                          class="food-image-thumbnail no-radius" />
                                 </div>
                                 <div class="food-card-body left-allign">
-                                    <h3 class="sub-title">All-Time Favorite</h3>
-                                    <p>Cremiges Kokos-Curry mit Bio-Tofu, serviert mit weißem Jasminreis und frischem Kräutersalat. Optional erhältlich.</p>
-                                    <div class="food-price-block">
-                                        @*  <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price compare-price">$ 29.00 USD</div> *@
-                                        <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price">10,80 €</div>
-                                    </div>
+                                    <h3 class="sub-title">@sp[2].Title</h3>
+                                    <p>@sp[2].Description</p>
                                 </div>
                             </a>
                         </div>
                         <div role="listitem" class="w-dyn-item">
                             <a href="#" class="food-card-secondary w-inline-block">
                                 <div class="mask">
-                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="./img/beef_on_fire.jpg"
-                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="./img/beef_on_fire.jpg 500w, ./img/beef_on_fire.jpg 674w"
+                                    <img loading="lazy" width="70" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" alt="" src="@sp[3].ImgUrl"
+                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 375px, (max-width: 991px) 45vw, 375px" srcset="@sp[3].ImgUrl 500w, @sp[3].ImgUrl 674w"
                                          class="food-image-thumbnail no-radius" />
                                 </div>
                                 <div class="food-card-body left-allign">
-                                    <h3 class="sub-title">Beef on Fire</h3>
+                                    <h3 class="sub-title">@sp[3].Title</h3>
                                     <p>
-                                        Gegrilltes Rindersteak (200g) mit frischen Kräutern, knackiger Gurke und Tomate, begleitet von geschwenktem Gemüse im Wok und weißem Jasminreis, serviert mit hausgemachter pikanten Sauce.
+                                        @sp[3].Description
                                     </p>
-                                    <div class="food-price-block">
-                                       @*  <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price compare-price">$ 29.00 USD</div> *@
-                                        <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="food-price">15,90 €</div>
-                                    </div>
                                 </div>
                             </a>
                         </div>
@@ -297,23 +289,23 @@
                 <div class="reservation-system-form">
                     <div class="title-wrapper">
                         <div class="mask">
-                            <h2 class="heading">Reservation System</h2>
+                            <h2 class="heading">@re[0].Title</h2>
                         </div>
                         <div class="mask">
-                            <p data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522f">Our commitment to excellence extends beyond the plate, creating an atmosphere that lingers in the memory, making your visit truly exceptional.</p>
+                            <p data-w-id="5e0dc5f6-7ac0-34d1-dd9e-efd6960d522f">@re[0].Desciption</p>
                         </div>
                     </div>
                     <div class="reservation-form w-form">
                         <form asp-controller="Reservation" asp-action="Create" id="email-form" name="email-form" data-name="Email Form" method="post" class="vertical-wrapper _40px-gap" data-wf-page-id="659e8d644eb26f00cd41e271" data-wf-element-id="fc929a18-5afb-fc63-92e3-89db322fa827">
                             <div class="flex-horizontal _14px-gap">
-                                <input asp-for="Name" class="reservation-input w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name *" type="text" id="name" required="" />
-                                <input asp-for="Email" class="reservation-input w-input" maxlength="256" name="email" data-name="Email" placeholder="Email Address" type="email" id="email"/>
-                                <input asp-for="PhoneNumber" class="reservation-input w-input" maxlength="256" data-name="PhoneNumber" placeholder="Contact No *" type="tel" id="contact" required="" />
+                                <input asp-for="Reservation.Name" class="reservation-input w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name *" type="text" id="name" required="" />
+                                <input asp-for="Reservation.Email" class="reservation-input w-input" maxlength="256" name="email" data-name="Email" placeholder="Email Address" type="email" id="email"/>
+                                <input asp-for="Reservation.PhoneNumber" class="reservation-input w-input" maxlength="256" data-name="PhoneNumber" placeholder="Contact No *" type="tel" id="contact" required="" />
                             </div>
                             <div class="flex-horizontal _14px-gap">
-                                <input asp-for="NumberPeople" class="reservation-input w-input" maxlength="256" data-name="NumberPeople" placeholder="People *" type="number" id="people" required="" />
-                                <input asp-for="Date" type="date" id="reservation-date" class="reservation-input w-input" required="">
-                                <input asp-for="Time" type="time" id="reservation-time" class="reservation-input w-input" required="">
+                                <input asp-for="Reservation.NumberPeople" class="reservation-input w-input" maxlength="256" data-name="NumberPeople" placeholder="People *" type="number" id="people" required="" />
+                                <input asp-for="Reservation.Date" type="date" id="reservation-date" class="reservation-input w-input" required="">
+                                <input asp-for="Reservation.Time" type="time" id="reservation-time" class="reservation-input w-input" required="">
                             </div>
                             <div class="margin-top-20px">
                                 <input type="submit" data-wait="Please wait..." class="rounded-button full-width w-button" value="Book a table" />
@@ -483,10 +475,10 @@
                                     <div class="icon star-rating"></div>
                                     <div class="icon star-rating"></div>
                                 </div>
-                                <p class="testimonial-text">Restaurant transformed our recruitment process entirely. The Figma flows and boolean search options provided us with unprecedented flexibility, allowing us to streamline our talent acquisition efforts.</p>
+                                <p class="testimonial-text">@cmt[0].Description</p>
                                 <div class="w-layout-vflex _6px-gap margin-top-20px">
-                                    <div class="sub-heading">Andrew Roy</div>
-                                    <div class="_14px-text">Chef</div>
+                                    <div class="sub-heading">@cmt[0].NameUser</div>
+                                    <div class="_14px-text">@cmt[0].Position</div>
                                 </div>
                             </div><img src="https://assets-global.website-files.com/659662e6ea1f446bb2be088b/659d0b97cb2fc8c5170e1ff8_left-quote%201.svg" loading="lazy" width="70" alt="" class="quote-svg" />
                         </div>
@@ -501,10 +493,10 @@
                                     <div class="icon star-rating"></div>
                                     <div class="icon star-rating"></div>
                                 </div>
-                                <p class="testimonial-text">Restaurant transformed our recruitment process entirely. The Figma flows and boolean search options provided us with unprecedented flexibility, allowing us to streamline our talent acquisition efforts.</p>
+                                <p class="testimonial-text">@cmt[1].Description</p>
                                 <div class="w-layout-vflex _6px-gap margin-top-20px">
-                                    <div class="sub-heading">Austin Mark</div>
-                                    <div class="_14px-text">UX Designer</div>
+                                    <div class="sub-heading">@cmt[1].NameUser</div>
+                                    <div class="_14px-text">@cmt[1].Position</div>
                                 </div>
                             </div><img src="https://assets-global.website-files.com/659662e6ea1f446bb2be088b/659d0b97cb2fc8c5170e1ff8_left-quote%201.svg" loading="lazy" width="70" alt="" class="quote-svg" />
                         </div>
@@ -519,10 +511,10 @@
                                     <div class="icon star-rating"></div>
                                     <div class="icon star-rating"></div>
                                 </div>
-                                <p class="testimonial-text">Restaurant transformed our recruitment process entirely. The Figma flows and boolean search options provided us with unprecedented flexibility, allowing us to streamline our talent acquisition efforts.</p>
+                                <p class="testimonial-text">@cmt[2].Description</p>
                                 <div class="w-layout-vflex _6px-gap margin-top-20px">
-                                    <div class="sub-heading">Tina Mcmillan</div>
-                                    <div class="_14px-text">UX Designer</div>
+                                    <div class="sub-heading">@cmt[2].NameUser</div>
+                                    <div class="_14px-text">@cmt[2].Position</div>
                                 </div>
                             </div><img src="https://assets-global.website-files.com/659662e6ea1f446bb2be088b/659d0b97cb2fc8c5170e1ff8_left-quote%201.svg" loading="lazy" width="70" alt="" class="quote-svg" />
                         </div>
@@ -537,10 +529,10 @@
                                     <div class="icon star-rating"></div>
                                     <div class="icon star-rating"></div>
                                 </div>
-                                <p class="testimonial-text">Restaurant transformed our recruitment process entirely. The Figma flows and boolean search options provided us with unprecedented flexibility, allowing us to streamline our talent acquisition efforts.</p>
+                                <p class="testimonial-text">@cmt[3].Description</p>
                                 <div class="w-layout-vflex _6px-gap margin-top-20px">
-                                    <div class="sub-heading">Cameron Williamson</div>
-                                    <div class="_14px-text">UX Designer</div>
+                                    <div class="sub-heading">@cmt[3].NameUser</div>
+                                    <div class="_14px-text">@cmt[3].Position</div>
                                 </div>
                             </div><img src="https://assets-global.website-files.com/659662e6ea1f446bb2be088b/659d0b97cb2fc8c5170e1ff8_left-quote%201.svg" loading="lazy" width="70" alt="" class="quote-svg" />
                         </div>
@@ -555,10 +547,10 @@
                                     <div class="icon star-rating"></div>
                                     <div class="icon star-rating"></div>
                                 </div>
-                                <p class="testimonial-text">Restaurant transformed our recruitment process entirely. The Figma flows and boolean search options provided us with unprecedented flexibility, allowing us to streamline our talent acquisition efforts.</p>
+                                <p class="testimonial-text">@cmt[4].Description</p>
                                 <div class="w-layout-vflex _6px-gap margin-top-20px">
-                                    <div class="sub-heading">Cameron Williamson</div>
-                                    <div class="_14px-text">UX Designer</div>
+                                    <div class="sub-heading">@cmt[4].NameUser</div>
+                                    <div class="_14px-text">@cmt[4].Position</div>
                                 </div>
                             </div><img src="https://assets-global.website-files.com/659662e6ea1f446bb2be088b/659d0b97cb2fc8c5170e1ff8_left-quote%201.svg" loading="lazy" width="70" alt="" class="quote-svg" />
                         </div>
@@ -576,23 +568,23 @@
 <footer id="footer" class="footer">
     <a href="https://www.instagram.com/bauscuisine_87/?igsh=MW5iaGVjZWNwNGFtdQ%3D%3D" class="instagram-gallery w-inline-block">
         <div class="full-width-mask hide-in-tablet">
-            <img src="/img/IMG_5754.JPG" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="/img/IMG_5754.JPG 500w, /img/IMG_5754.JPG 764w"
+            <img src="@ig[0].ImgUrl" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="@ig[0].ImgUrl 500w, @ig[0].ImgUrl 764w"
                  alt="" class="instagram-image" />
         </div>
         <div class="full-width-mask">
-            <img src="./img/IMG_5755.JPG" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="./img/IMG_5755.JPG 500w, ./img/IMG_5755.JPG 764w"
+            <img src="@ig[1].ImgUrl" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="@ig[1].ImgUrl 500w, @ig[1].ImgUrl 764w"
                  alt="" class="instagram-image" />
         </div>
         <div class="full-width-mask">
-            <img src="./img/product03.jpg" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="./img/product03.jpg 500w, ./img/product03.jpg 764w"
+            <img src="@ig[2].ImgUrl" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="@ig[2].ImgUrl 500w, @ig[2].ImgUrl 764w"
                  alt="" class="instagram-image" />
         </div>
         <div class="full-width-mask">
-            <img src="./img/IMG_5755.JPG" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="./img/IMG_5755.JPG 500w, ./img/IMG_5755.JPG 764w"
+            <img src="@ig[3].ImgUrl" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="@ig[3].ImgUrl 500w, @ig[3].ImgUrl 764w"
                  alt="" class="instagram-image" />
         </div>
         <div class="full-width-mask hide-in-tablet">
-            <img src="./img/product03.jpg" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="./img/product03.jpg 500w, ./img/product03.jpg 764w"
+            <img src="@ig[4].ImgUrl" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="@ig[4].ImgUrl 500w, @ig[4].ImgUrl 764w"
                  alt="" class="instagram-image" />
         </div>
         <div class="dark-overlay"></div>
@@ -630,7 +622,7 @@
                     <div class="footer-title">Quick Link</div>
                     <div class="list-block">
                         <a href="/" aria-current="page" class="footer-link w--current">Home</a>
-                        <a href="/shop" class="footer-link">Menu</a>
+                        <a href="/shop/0" class="footer-link">Menu</a>
                         <a href="/about" class="footer-link">About</a>
                         <a href="/reservation" class="footer-link">Reservation</a>
                         <a href="/contact" class="footer-link">Contact</a>

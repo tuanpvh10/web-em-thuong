@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var ig = ViewBag.ig as List<WebEmThuong.Models.Instagram>;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,7 +15,7 @@
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
-    <link href="./css/index.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/index.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
@@ -32,8 +35,8 @@
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document);
     </script>
-    <link href="./img/logo.jpg" rel="shortcut icon" type="image/x-icon" />
-    <link href="./img/logo_txt.jpg" rel="apple-touch-icon" />
+    <link href="~/img/logo.jpg" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/img/logo_txt.jpg" rel="apple-touch-icon" />
 </head>
 <body>
     <div data-animation="over-right" class="navbar global-navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" data-w-id="5c73ce63-e248-b03e-3bd4-c7d9696f9614" role="banner" data-duration="400" id="navbar">
@@ -52,7 +55,7 @@
                             </div>
                         </li>
                         <li class="nav-list"><a href="/about" class="nav-link text-color">About Us</a></li>
-                        <li class="nav-list"><a asp-controller="ShopController" asp-action="index" asp-route-id="0" aria-current="page" class="nav-link text-color w--current">Menu</a></li>
+                        <li class="nav-list"><a href="/shop/0" aria-current="page" class="nav-link text-color">Menu</a></li>
                         <li class="nav-list"><a href="/reservation" class="nav-link text-color">Reservation</a></li>
                         <li class="nav-list"><a href="/contact" class="nav-link text-color">Contact Us</a></li>
                     </ul>
@@ -82,23 +85,23 @@
     <footer id="footer" class="footer">
         <a href="https://www.instagram.com/bauscuisine_87/?igsh=MW5iaGVjZWNwNGFtdQ%3D%3D" class="instagram-gallery w-inline-block">
             <div class="full-width-mask hide-in-tablet">
-                <img src="/img/IMG_5754.JPG" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="/img/IMG_5754.JPG 500w, /img/IMG_5754.JPG 764w"
+                <img src="~/img/@System.IO.Path.GetFileName(@ig[0].ImgUrl)" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="~/img/@System.IO.Path.GetFileName(@ig[0].ImgUrl) 500w, ~/img/@System.IO.Path.GetFileName(@ig[0].ImgUrl) 764w"
                      alt="" class="instagram-image" />
             </div>
             <div class="full-width-mask">
-                <img src="./img/IMG_5755.JPG" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="./img/IMG_5755.JPG 500w, ./img/IMG_5755.JPG 764w"
+                <img src="~/img/@System.IO.Path.GetFileName(@ig[1].ImgUrl)" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="~/img/@System.IO.Path.GetFileName(@ig[1].ImgUrl) 500w, ~/img/@System.IO.Path.GetFileName(@ig[1].ImgUrl) 764w"
                      alt="" class="instagram-image" />
             </div>
             <div class="full-width-mask">
-                <img src="./img/product03.jpg" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="./img/product03.jpg 500w, ./img/product03.jpg 764w"
+                <img src="@ig[2].ImgUrl" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="@ig[2].ImgUrl 500w, @ig[2].ImgUrl 764w"
                      alt="" class="instagram-image" />
             </div>
             <div class="full-width-mask">
-                <img src="./img/IMG_5755.JPG" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="./img/IMG_5755.JPG 500w, ./img/IMG_5755.JPG 764w"
+                <img src="@ig[3].ImgUrl" loading="lazy" sizes="(max-width: 991px) 33vw, 20vw" srcset="@ig[3].ImgUrl 500w, @ig[3].ImgUrl 764w"
                      alt="" class="instagram-image" />
             </div>
             <div class="full-width-mask hide-in-tablet">
-                <img src="./img/product03.jpg" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="./img/product03.jpg 500w, ./img/product03.jpg 764w"
+                <img src="@ig[4].ImgUrl" loading="lazy" sizes="(max-width: 991px) 100vw, 20vw" srcset="@ig[4].ImgUrl 500w, @ig[4].ImgUrl 764w"
                      alt="" class="instagram-image" />
             </div>
             <div class="dark-overlay"></div>
@@ -136,7 +139,7 @@
                         <div class="footer-title">Quick Link</div>
                         <div class="list-block">
                             <a href="/" aria-current="page" class="footer-link w--current">Home</a>
-                            <a asp-controller="ShopController" asp-action="index" asp-route-id="0" class="footer-link">Menu</a>
+                            <a href="/shop/0" class="footer-link">Menu</a>
                             <a href="/about" class="footer-link">About</a>
                             <a href="/reservation" class="footer-link">Reservation</a>
                             <a href="/contact" class="footer-link">Contact</a>

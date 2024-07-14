@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"] - Admin</title>
+    <link rel="stylesheet" href="~/css/admin.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a asp-controller="ReservationsManagement" asp-action="Index">Reservation</a></li>
+                <li><a asp-controller="CategoryManagement" asp-action="Index">Category</a></li>
+                <li><a asp-controller="ProductionsManagement" asp-action="Index">Production</a></li>
+                <li><a asp-controller="AboutsManagement" asp-action="Index">Abouts</a></li>
+                <li style="margin-left:300px">
+                    <select onchange="location = this.value;">
+                        <option value="#">Home Page list management</option>
+                        <option value="/BackGrounds">Background</option>
+                        <option value="/AboutHomePageManagements">About</option>
+                        <option value="/SpecialOffers">Specials</option>
+                        <option value="/ReservationHomePages">Reservation</option>
+                        <option value="/Comments">Comment</option>
+                        <option value="/InstagramsManagement">Instagram</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="admin-container">
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

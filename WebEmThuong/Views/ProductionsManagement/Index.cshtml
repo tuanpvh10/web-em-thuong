@@ -2,7 +2,10 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    // Lấy từ điển CategoryId => CategoryName từ ViewBag
+    var categoryDictionary = ViewBag.CategoryDictionary as Dictionary<int, string>;
 }
 
 <!DOCTYPE html>
@@ -29,7 +32,7 @@
                     <th>@Html.DisplayNameFor(model => model.Description)</th>
                     <th>@Html.DisplayNameFor(model => model.Rating)</th>
                     <th>@Html.DisplayNameFor(model => model.ImgUrl)</th>
-                    <th>@Html.DisplayNameFor(model => model.CatagoryId)</th>
+                    <th>Category Name</th>
                     <th></th>
                 </tr>
             </thead>
@@ -41,8 +44,19 @@
                         <td>@Html.DisplayFor(modelItem => item.Price)</td>
                         <td>@Html.DisplayFor(modelItem => item.Description)</td>
                         <td>@Html.DisplayFor(modelItem => item.Rating)</td>
-                        <td>@Html.DisplayFor(modelItem => item.ImgUrl)</td>
-                        <td>@Html.DisplayFor(modelItem => item.CatagoryId)</td>
+                        <td>
+                            <img src="@item.ImgUrl" alt="Background Image" class="img-thumbnail" style="max-height: 200px;">
+                        </td>
+                        <td>
+                            @if (categoryDictionary.ContainsKey(item.CatagoryId))
+                            {
+                                @categoryDictionary[item.CatagoryId]
+                            }
+                            else
+                            {
+                                <span class="text-danger">Unknown Category</span>
+                            }
+                        </td>
                         <td>
                             <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                             <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>

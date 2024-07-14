@@ -15,6 +15,6 @@ namespace WebEmThuong.Models
         [Required]
         public double PhoneNumber { get; set; }
         public int NumberPeople { get; set; }
-        public string Status { get; set; } = "Waiting";
+        public string Status { get; set; } = "Confirmed";
     }
 }

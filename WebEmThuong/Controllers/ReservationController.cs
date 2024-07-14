@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using WebEmThuong.Models;
 using WebEmThuong.SignalR;
 
@@ -20,6 +21,8 @@ namespace WebEmThuong.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            var ig = myDbContext.Instagram.OrderBy(b => b.Id).ToList();
+            ViewBag.ig = ig;
             return View();
         }
 

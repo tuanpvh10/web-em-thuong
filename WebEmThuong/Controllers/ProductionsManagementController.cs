@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,6 +11,7 @@ using WebEmThuong.Models;
 
 namespace WebEmThuong.Controllers
 {
+    [Authorize]
     public class ProductionsManagementController : Controller
     {
         private readonly MyDbContext _context;
@@ -23,8 +25,17 @@ namespace WebEmThuong.Controllers
         // GET: ProductionsManagement
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Productions.OrderBy(p=>p.Sort).ToListAsync());
+            var productions = await _context.Productions.OrderBy(p => p.Sort).ToListAsync();
+            var categories = await _context.Category.ToListAsync();
+
+            // Tạo từ điển ánh xạ CategoryId đến CategoryName
+            var categoryDictionary = categories.ToDictionary(c => c.Id, c => c.Name);
+
+            ViewBag.CategoryDictionary = categoryDictionary;
+
+            return View(productions);
         }
+
 
         // GET: ProductionsManagement/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -41,6 +52,17 @@ namespace WebEmThuong.Controllers
                 return NotFound();
             }
 
+            var category = await _context.Category
+                .FirstOrDefaultAsync(c => c.Id == production.CatagoryId);
+            if (category == null)
+            {
+                ViewBag.CategoryName = "Unknown Category";
+            }
+            else
+            {
+                ViewBag.CategoryName = category.Name;
+            }
+
             return View(production);
         }
 
@@ -52,30 +74,18 @@ namespace WebEmThuong.Controllers
             return View();
         }
 
-        // POST: ProductionsManagement/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Description,Rating,ImgUrl,CatagoryId")] Production production, IFormFile? file)
+        public async Task<IActionResult> Create([Bind("Name,Price,Description,Sort,Rating,ImgUrl,CatagoryId")] Production production)
         {
             if (ModelState.IsValid)
             {
-                string wwwRootPath = _webHostEnvironment.WebRootPath;
-                if(file != null)
-                {
-                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-                    string productPath = Path.Combine(wwwRootPath, @"img");
-                    using(var filesStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
-                    {
-                        file.CopyTo(filesStream);
-                    }
-                    production.ImgUrl = @"img/" + fileName;
-                }
                 _context.Add(production);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            var categories = _context.Category.ToList();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
             return View(production);
         }
 
@@ -92,15 +102,16 @@ namespace WebEmThuong.Controllers
             {
                 return NotFound();
             }
+
+            var categories = _context.Category.ToList();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name", production.CatagoryId);
             return View(production);
         }
 
         // POST: ProductionsManagement/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,Rating,ImgUrl,CatagoryId")] Production production, IFormFile? file)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,Sort,Rating,ImgUrl,CatagoryId")] Production production, IFormFile? file)
         {
             if (id != production.Id)
             {
@@ -138,8 +149,11 @@ namespace WebEmThuong.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            var categories = _context.Category.ToList();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name", production.CatagoryId);
             return View(production);
         }
+
 
         // GET: ProductionsManagement/Delete/5
         public async Task<IActionResult> Delete(int? id)
