@@ -76,17 +76,27 @@ namespace WebEmThuong.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Price,Description,Sort,Rating,ImgUrl,CatagoryId")] Production production)
+        public async Task<IActionResult> Create([Bind("Name,Price,Description,Sort,Rating,ImgUrl,CatagoryId")] Production production, IFormFile? file)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(production);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             var categories = _context.Category.ToList();
             ViewBag.Categories = new SelectList(categories, "Id", "Name");
-            return View(production);
+            if (ModelState.IsValid)
+            {
+                string wwwRootPath = _webHostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string productPath = Path.Combine(wwwRootPath, @"img");
+                    using (var filesStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                    {
+                        file.CopyTo(filesStream);
+                    }
+                    production.ImgUrl = @"img/" + fileName;
+                }
+                _context.Add(production);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: ProductionsManagement/Edit/5
