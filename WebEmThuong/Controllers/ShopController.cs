@@ -8,7 +8,6 @@ namespace WebEmThuong.Controllers
     public class ShopController : Controller
     {
         private readonly MyDbContext _context;
-
         public ShopController(MyDbContext context)
         {
             _context = context;
