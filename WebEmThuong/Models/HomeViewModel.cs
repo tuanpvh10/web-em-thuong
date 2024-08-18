@@ -9,5 +9,6 @@
         public List<SpecialOffers> SpecialOffers { get; set; }
         public List<ReservationHomePage> ReservationHomePages { get; set; }
         public Reservation Reservation { get; set; }
+        public List<Galleries> Galleries { get; set; }
     }
 }

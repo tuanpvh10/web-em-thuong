@@ -23,6 +23,7 @@ namespace WebEmThuong.Controllers
             var instagrams = _context.Instagram.OrderBy(b => b.Id).ToList();
             var specialOffers = _context.SpecialOffers.OrderBy(b => b.Id).ToList();
             var reservationHomePages = _context.ReservationHomePages.OrderBy(b => b.Id).ToList();
+            var gallaries = _context.Galleries.OrderBy(b => b.Id).ToList();
 
             var homeViewModel = new HomeViewModel()
             {
@@ -31,7 +32,8 @@ namespace WebEmThuong.Controllers
                 Comments = comments,
                 Instagrams = instagrams,
                 SpecialOffers = specialOffers,
-                ReservationHomePages = reservationHomePages
+                ReservationHomePages = reservationHomePages,
+                Galleries = gallaries,
             };
 
             return View(homeViewModel);
