@@ -65,7 +65,12 @@ namespace WebEmThuong.Controllers
                     {
                         string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                         string productPath = Path.Combine(wwwRootPath, @"img");
+                        string shopPath = Path.Combine(wwwRootPath, @"shop/img");
                         using (var filesStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                        {
+                            file.CopyTo(filesStream);
+                        }
+                        using (var filesStream = new FileStream(Path.Combine(shopPath, fileName), FileMode.Create))
                         {
                             file.CopyTo(filesStream);
                         }
