@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebEmThuong.Models;
 
 namespace WebEmThuong.Controllers
 {
+    [Authorize]
     public class GalariesController : Controller
     {
         private readonly MyDbContext _context;
